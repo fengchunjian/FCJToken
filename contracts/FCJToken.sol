@@ -152,7 +152,7 @@ contract FCJToken is StandardToken {
      * @dev Initialize the FCJ Token
      * @param _target The escrow account address, all ethers will
      * be sent to this address.
-     * This address will be : 0xe597c5ab87e9d20ad445976d9b016c37f864da2b
+     * This address will be : 0x43542027528431b6f5d6acb8a9b809f198392471
      */
     function FCJToken(address _target) {
         target = _target;

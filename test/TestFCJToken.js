@@ -1,11 +1,11 @@
-var HPBToken = artifacts.require("HPBToken");
+var FCJToken = artifacts.require("FCJToken");
 
-contract('HPBToken', function(accounts) {
+contract('FCJToken', function(accounts) {
   it("should not be able to start ico sale when not called by owner.", function() {
     console.log("\n" + "-".repeat(100) + "\n");
     var hbp;
     var target;
-    return HPBToken.deployed().then(function(instance) {
+    return FCJToken.deployed().then(function(instance) {
       hbp = instance;
       console.log("hbp:", hbp.address);
       return hbp.target.call({from: accounts[1]});
@@ -37,7 +37,7 @@ contract('HPBToken', function(accounts) {
     console.log("\n" + "-".repeat(100) + "\n");
     var hbp;
     var target;
-    return HPBToken.deployed().then(function(instance) {
+    return FCJToken.deployed().then(function(instance) {
       hbp = instance;
       return hbp.target.call({from: accounts[1]});
     }).then(function(t){
@@ -59,7 +59,7 @@ contract('HPBToken', function(accounts) {
     console.log("\n" + "-".repeat(100) + "\n");
     var hbp;
     var target;
-    return HPBToken.deployed().then(function(instance) {
+    return FCJToken.deployed().then(function(instance) {
       hbp = instance;
       return hbp.target.call();
     }).then(function(t){
@@ -81,12 +81,12 @@ contract('HPBToken', function(accounts) {
     });
   });
 
-  it("should be able to create HPB tokens after sale starts", function() {
+  it("should be able to create FCJ tokens after sale starts", function() {
     console.log("\n" + "-".repeat(100) + "\n");
     var hbp;
     var target;
     var externalTxHash;
-    return HPBToken.deployed().then(function(instance) {
+    return FCJToken.deployed().then(function(instance) {
       hbp = instance;
       return hbp.target.call({from: accounts[1]});
     }).then(function(t){
@@ -97,7 +97,7 @@ contract('HPBToken', function(accounts) {
       return hbp.balanceOf(accounts[1], {from: accounts[1]});
     }).then(function(bal) {
       console.log("bal: ", bal.toNumber());
-      assert.equal(bal.toNumber(), web3.toWei(6000), "no HPB token Transfer event found");
+      assert.equal(bal.toNumber(), web3.toWei(6000), "no FCJ token Transfer event found");
     });
   });
 });

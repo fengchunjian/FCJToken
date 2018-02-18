@@ -1,2 +1,3 @@
 # FCJToken
-FCJToken ICO
+
+http://www.qukuai.top/d/365
